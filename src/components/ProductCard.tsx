@@ -5,7 +5,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
+  DialogClose,
 } from "@/components/ui/dialog";
+import { X } from "lucide-react";
 
 interface ProductCardProps {
   image: string;
@@ -57,16 +59,23 @@ const ProductCard = ({
       </article>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-2xl bg-card border-border p-0 overflow-hidden">
-          <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/2 aspect-[3/4] md:aspect-auto">
+        <DialogContent className="sm:max-w-2xl bg-card border-border p-0 overflow-hidden h-[100dvh] max-h-[100dvh] sm:h-auto sm:max-h-[90vh] flex flex-col">
+          {/* Barra fija "Cerrar" en móvil para poder salir siempre */}
+          <div className="flex sm:hidden shrink-0 items-center justify-between border-b border-border bg-card px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
+            <DialogClose className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted active:bg-muted">
+              <X className="h-5 w-5" aria-hidden />
+              <span>Cerrar</span>
+            </DialogClose>
+          </div>
+          <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-hidden">
+            <div className="md:w-1/2 aspect-[3/4] md:aspect-auto shrink-0">
               <img
                 src={image}
                 alt={name}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center space-y-4">
+            <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center space-y-4 overflow-y-auto min-h-0">
               <DialogHeader className="space-y-2">
                 <p className="text-[10px] uppercase tracking-widest text-primary font-sans">{category}</p>
                 <DialogTitle className="font-serif text-2xl md:text-3xl font-semibold text-foreground">
