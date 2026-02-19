@@ -7,7 +7,7 @@ const AboutBanner = () => {
           Moda con historia,<br />no moda desechable
         </h2>
         <p className="text-surface-dark-foreground/70 leading-relaxed text-sm md:text-base max-w-xl mx-auto mb-8">
-          Cada pieza en nuestra tienda es seleccionada a mano de paca premium. Buscamos calidad, originalidad y carácter. No encontrarás dos prendas iguales — eso es lo que las hace especiales.
+          Cada pieza en nuestra tienda es seleccionada a mano. Buscamos calidad, originalidad y carácter. No encontrarás dos prendas iguales — eso es lo que las hace especiales.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <div className="text-center px-6">

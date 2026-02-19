@@ -26,7 +26,7 @@ const ProductCard = ({
   price,
   category,
   size,
-  description = "Pieza vintage seleccionada a mano de paca premium. Estado impecable con detalles únicos que la hacen irrepetible.",
+  description = "Pieza vintage seleccionada a mano. Estado impecable con detalles únicos que la hacen irrepetible.",
   condition = "Premium — Excelente estado",
   measurements = { hombros: "42 cm", largo: "68 cm", ancho: "50 cm" },
 }: ProductCardProps) => {
@@ -67,15 +67,16 @@ const ProductCard = ({
               <span>Cerrar</span>
             </DialogClose>
           </div>
-          <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-hidden">
-            <div className="md:w-1/2 aspect-[3/4] md:aspect-auto shrink-0">
+          {/* En móvil todo (imagen + texto) sube/baja junto en un solo scroll. En escritorio imagen fija a la izquierda y texto con scroll a la derecha. */}
+          <div className="flex flex-col md:flex-row flex-1 min-h-0 overflow-y-auto md:overflow-hidden">
+            <div className="md:w-1/2 aspect-[3/4] md:aspect-auto shrink-0 w-full">
               <img
                 src={image}
                 alt={name}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center space-y-4 overflow-y-auto min-h-0">
+            <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center space-y-4 md:overflow-y-auto md:min-h-0">
               <DialogHeader className="space-y-2">
                 <p className="text-[10px] uppercase tracking-widest text-primary font-sans">{category}</p>
                 <DialogTitle className="font-serif text-2xl md:text-3xl font-semibold text-foreground">
