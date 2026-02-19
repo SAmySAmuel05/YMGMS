@@ -7,8 +7,8 @@ const StoreFooter = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-serif text-lg font-semibold text-foreground flex items-center gap-1.5 justify-center md:justify-start">
-            <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-5 w-5 object-contain" aria-hidden />
             YMGMS
+            <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-5 w-5 object-contain animate-girasol-sway" aria-hidden />
           </p>
             <p className="text-xs text-muted-foreground mt-1">Moda con historia · Piezas únicas</p>
           </div>

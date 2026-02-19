@@ -21,8 +21,8 @@ const StoreHeader = () => {
         </button>
 
         <Link to="/" className="font-serif text-xl md:text-2xl font-semibold tracking-tight text-foreground flex items-center gap-1.5">
-          <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-6 w-6 md:h-7 md:w-7 object-contain" aria-hidden />
           YMGMS
+          <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-6 w-6 md:h-7 md:w-7 object-contain animate-girasol-sway" aria-hidden />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase text-muted-foreground">

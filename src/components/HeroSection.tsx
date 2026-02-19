@@ -16,8 +16,8 @@ const HeroSection = () => {
             Moda con historia
           </p>
            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-surface-dark-foreground leading-[1.1] mb-4 flex items-center gap-3">
-             <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain" aria-hidden />
              YMGMS
+             <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain animate-girasol-sway" aria-hidden />
            </h1>
           <p className="text-surface-dark-foreground/80 text-sm md:text-base max-w-md mb-8 font-light leading-relaxed">
             Piezas únicas con historia. Cada prenda es seleccionada a mano por su calidad, originalidad y carácter.
