@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ShoppingBag, Menu, X } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+import CartSheet from "@/components/CartSheet";
 
 const StoreHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -16,7 +20,8 @@ const StoreHeader = () => {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <Link to="/" className="font-serif text-xl md:text-2xl font-semibold tracking-tight text-foreground">
+        <Link to="/" className="font-serif text-xl md:text-2xl font-semibold tracking-tight text-foreground flex items-center gap-1.5">
+          <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-6 w-6 md:h-7 md:w-7 object-contain" aria-hidden />
           YMGMS
         </Link>
 
@@ -27,12 +32,20 @@ const StoreHeader = () => {
           <Link to="/categoria/accesorios" className="hover:text-primary transition-colors">Accesorios</Link>
         </nav>
 
-        <button className="relative text-foreground hover:text-primary transition-colors" aria-label="Carrito">
+        <button
+          type="button"
+          className="relative text-foreground hover:text-primary transition-colors"
+          aria-label="Carrito"
+          onClick={() => setCartOpen(true)}
+        >
           <ShoppingBag size={22} />
-          <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[10px] flex items-center justify-center font-medium">
-            0
-          </span>
+          {totalItems > 0 && (
+            <span className="absolute -top-1 -right-2 min-w-[1rem] h-4 px-1 rounded-full bg-primary text-primary-foreground text-[10px] flex items-center justify-center font-medium">
+              {totalItems > 99 ? "99+" : totalItems}
+            </span>
+          )}
         </button>
+        <CartSheet open={cartOpen} onOpenChange={setCartOpen} />
       </div>
 
       {/* Mobile menu */}

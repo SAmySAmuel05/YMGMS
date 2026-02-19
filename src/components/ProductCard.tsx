@@ -7,7 +7,10 @@ import {
   DialogDescription,
   DialogClose,
 } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/CartContext";
+import { whatsappUrl, messageConsultarProducto } from "@/lib/whatsapp";
+import { X, ShoppingBag } from "lucide-react";
 
 interface ProductCardProps {
   image: string;
@@ -31,6 +34,15 @@ const ProductCard = ({
   measurements = { hombros: "42 cm", largo: "68 cm", ancho: "50 cm" },
 }: ProductCardProps) => {
   const [open, setOpen] = useState(false);
+  const { addItem } = useCart();
+
+  const handleConsultarWhatsApp = () => {
+    window.open(whatsappUrl(messageConsultarProducto(name, price, size)), "_blank", "noopener,noreferrer");
+  };
+
+  const handleAddToCart = () => {
+    addItem({ name, price, image, category, size });
+  };
 
   return (
     <>
@@ -132,9 +144,22 @@ const ProductCard = ({
                 )}
               </div>
 
-              <button className="w-full bg-primary text-primary-foreground py-3 text-sm uppercase tracking-widest font-medium hover:opacity-90 transition-opacity mt-4">
-                Consultar disponibilidad
-              </button>
+              <div className="flex flex-col gap-2 mt-4">
+                <Button
+                  className="w-full gap-2"
+                  onClick={handleAddToCart}
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                  Añadir al carrito
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={handleConsultarWhatsApp}
+                >
+                  Consultar disponibilidad (WhatsApp)
+                </Button>
+              </div>
             </div>
           </div>
         </DialogContent>

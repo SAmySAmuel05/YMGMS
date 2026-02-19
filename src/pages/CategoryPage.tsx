@@ -31,7 +31,7 @@ const allProducts: Record<string, Array<{
     { image: productTee, name: "Playera Band Tee 90s", price: "$220 MXN", category: "Playeras", size: "M", description: "Playera de banda de los 90s auténtica. Un tesoro para coleccionistas.", condition: "Vintage — Buen estado", measurements: { hombros: "46 cm", largo: "70 cm", ancho: "52 cm" } },
   ],
   accesorios: [
-    { image: productAccessory, name: "Set Pañuelo & Accesorios", price: "$280 MXN", category: "Accesorios", description: "Set curado de pañuelo de seda y accesorios complementarios. Piezas versátiles.", condition: "Premium — Excelente estado" },
+    { image: productAccessory, name: "Set Pañuelo & Accesorios", price: "$280 MXN", category: "Accesorios", description: "Set de pañuelo de seda y accesorios complementarios. Piezas versátiles.", condition: "Premium — Excelente estado" },
     { image: productAccessory, name: "Bolso Vintage de Piel", price: "$650 MXN", category: "Accesorios", description: "Bolso de piel genuina con herrajes dorados. Estilo atemporal y elegante.", condition: "Vintage — Muy buen estado" },
   ],
 };

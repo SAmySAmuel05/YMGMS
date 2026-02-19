@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-end overflow-hidden">
       <img
         src={heroImage}
-        alt="Colección curada de ropa única"
+        alt="Colección de ropa única"
         className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
       />
@@ -13,9 +13,10 @@ const HeroSection = () => {
       <div className="relative container pb-16 md:pb-24 z-10">
         <div className="max-w-xl animate-fade-up">
           <p className="text-primary font-sans text-xs md:text-sm uppercase tracking-[0.3em] mb-3">
-            Curaduría de moda
+            Moda con historia
           </p>
-           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-surface-dark-foreground leading-[1.1] mb-4">
+           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-semibold text-surface-dark-foreground leading-[1.1] mb-4 flex items-center gap-3">
+             <img src={`${import.meta.env.BASE_URL}girasol.svg`} alt="" className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain" aria-hidden />
              YMGMS
            </h1>
           <p className="text-surface-dark-foreground/80 text-sm md:text-base max-w-md mb-8 font-light leading-relaxed">

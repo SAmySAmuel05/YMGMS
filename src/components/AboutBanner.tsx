@@ -17,7 +17,7 @@ const AboutBanner = () => {
           <div className="hidden sm:block w-px h-12 bg-surface-dark-foreground/20" />
           <div className="text-center px-6">
             <p className="font-serif text-2xl md:text-3xl font-semibold text-primary">Premium</p>
-            <p className="text-xs uppercase tracking-widest text-surface-dark-foreground/50 mt-1">Calidad curada</p>
+            <p className="text-xs uppercase tracking-widest text-surface-dark-foreground/50 mt-1">Alta calidad</p>
           </div>
           <div className="hidden sm:block w-px h-12 bg-surface-dark-foreground/20" />
           <div className="text-center px-6">
